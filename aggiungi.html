@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Elemento</title>
+    <link rel="stylesheet" href="styleaggiungi.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Aggiungi Elemento</h2>
+        <form action="aggiungi.php" method="post">
+            <label for="tabella">Seleziona Tabella:</label>
+            <select name="tabella" id="tabella">
+                <option value="videogiochi">Videogiochi</option>
+                <option value="utenti">Utenti</option>
+                <option value="ordine">Ordine</option>
+                <option value="carrello">Carrello</option>
+            </select><br><br>
+
+            <!-- Campi aggiuntivi in base alla tabella selezionata -->
+            <?php if ($_POST["tabella"] == "videogiochi"): ?>
+                <label for="id_gioco">ID Gioco:</label>
+                <input type="text" id="id_gioco" name="id_gioco"><br><br>
+                <label for="titolo">Titolo:</label>
+                <input type="text" id="titolo" name="titolo"><br><br>
+                <label for="genere">Genere:</label>
+                <input type="text" id="genere" name="genere"><br><br>
+                <label for="prezzo">Prezzo:</label>
+                <input type="text" id="prezzo" name="prezzo"><br><br>
+            <?php elseif ($_POST["tabella"] == "utenti"): ?>
+                <label for="id_utente">ID Utente:</label>
+                <input type="text" id="id_utente" name="id_utente"><br><br>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome"><br><br>
+                <label for="indirizzo">Indirizzo:</label>
+                <input type="text" id="indirizzo" name="indirizzo"><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+            <?php elseif ($_POST["tabella"] == "ordine"): ?>
+                <label for="id_ordine">ID Ordine:</label>
+                <input type="text" id="id_ordine" name="id_ordine"><br><br>
+                <label for="id_utente">ID Utente:</label>
+                <input type="text" id="id_utente" name="id_utente"><br><br>
+                <label for="data_ordine">Data Ordine:</label>
+                <input type="text" id="data_ordine" name="data_ordine"><br><br>
+            <?php elseif ($_POST["tabella"] == "carrello"): ?>
+                <label for="id_carrello">ID Carrello:</label>
+                <input type="text" id="id_carrello" name="id_carrello"><br><br>
+                <label for="id_utente">ID Utente:</label>
+                <input type="text" id="id_utente" name="id_utente"><br><br>
+            <?php endif; ?>
+            
+            <input type="submit" value="Aggiungi">
+        </form>
+    </div>
+</body>
+</html>

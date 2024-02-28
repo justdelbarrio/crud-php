@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elimina Elemento</title>
+    <link rel="stylesheet" href="elimina.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Elimina Elemento</h2>
+        <form action="elimina.php" method="get">
+            <label for="tabella">Seleziona Tabella:</label>
+            <select name="tabella" id="tabella">
+                <option value="videogiochi">Videogiochi</option>
+                <option value="utenti">Utenti</option>
+                <option value="ordine">Ordine</option>
+                <option value="carrello">Carrello</option>
+            </select><br><br>
+
+            <label for="id">Seleziona ID:</label>
+            <input type="text" id="id" name="id"><br><br>
+            
+            <input type="submit" value="Elimina">
+        </form>
+    </div>
+</body>
+</html>
