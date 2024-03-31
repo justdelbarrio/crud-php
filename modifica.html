@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Elemento</title>
+    <link rel="stylesheet" href="modifica.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Modifica Elemento</h2>
+        <form action="modifica.php" method="post">
+            <input type="hidden" name="tabella" value="<?php echo $tabella; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+
+            <table>
+                <?php foreach ($row as $key => $value): ?>
+                    <?php if ($key !== "ID_$tabella"): ?>
+                        <tr>
+                            <td><label for="<?php echo $key; ?>"><?php echo ucwords(str_replace("_", " ", $key)); ?>:</label></td>
+                            <td><input type="text" id="<?php echo $key; ?>" name="<?php echo $key; ?>" value="<?php echo $value; ?>"></td>
+                        </tr>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </table>
+            
+            <input type="submit" value="Salva Modifiche">
+        </form>
+    </div>
+</body>
+</html>
